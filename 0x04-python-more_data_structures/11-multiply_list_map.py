@@ -1,12 +1,4 @@
 #!/usr/bin/python3
-def best_score(a_dictionary):
-    if not in a_dictionary:
-        return None
-    Max = 0
-    for key, value in a_dictionary.items():
-        if value > Max:
-            Max = value
-    for key, value in a_dictionary.items():
-        if value == Max:
-            return key;
+def multiply_list_map(my_list=[], number=0):
+    return list(map(lambda x: x * number, my_list))
 
