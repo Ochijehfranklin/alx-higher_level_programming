@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#0-rectangle.py
+# 0-rectangle.py
 
 """This holds an empty class called Rectangle"""
 
