@@ -7,8 +7,8 @@ def is_same_class(obj, a_class):
 
 
     Args:
-        obj: The object to check
-        a_class: The class to CHECK IF same with obj
+        obj (any): The object to check
+        a_class (type): The class to CHECK IF same with obj
     """
 
     if type(obj) == a_class:
