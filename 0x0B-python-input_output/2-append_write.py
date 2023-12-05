@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+# -append_write.py
+"""project for appending file"""
 
 
 def append_write(filename="", text=""):
-    """Appends a string to the end of text file
+    """append a string to the end of text file
 
     Args:
         filename (str): The name of the file to append to
