@@ -76,5 +76,5 @@ class Rectangle(Base):
         """
         function to print rectangle size
         """
-        for _ in range(self.height):
+        for x in range(self.height):
             print("#" * self.width)
