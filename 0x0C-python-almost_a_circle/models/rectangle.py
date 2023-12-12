@@ -41,7 +41,7 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-        
+
     @property
     def height(self):
         """Height Getter."""
@@ -89,10 +89,10 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-         """Print the Rectangle using the `#` character."""
-         for w in range(self.y):
-             print()
-         for i in range(self.height):
+        """Print the Rectangle using the `#` character."""
+        for w in range(self.y):
+            print()
+        for i in range(self.height):
             print(" " * self.x + "#" * self.width)
 
     def __str__(self):
