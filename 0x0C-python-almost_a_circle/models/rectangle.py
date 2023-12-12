@@ -135,5 +135,3 @@ class Rectangle(Base):
                     self.y = value
                 else:
                     break
-
-
