@@ -8,15 +8,19 @@ class Rectangle(Base):
     """This defines the rectangle class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """initialize the class Rectangle"""
+        """initialize the class Rectangle
 
-        """
         Args:
             width (int): defines width of rectangle
             height (int): defines height of rectangle
             x (int): The x-axis of rectangle
             y (int): The y-axis of rectangle
-            id (int): identity of rectangle
+            id (int): identity of rectangle.
+        Raises:
+            TypeError: If either of width or height is not an int
+            ValueError: If either of width or height <= 0
+            TypeError: If either of x or y is not an int
+            ValueError: If either of x or y < 0
         """
         self.width = width
         self.height = height
@@ -24,6 +28,20 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    @property
+    def width(self):
+        """Width Getter."""
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """Width Setter."""
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
+        
     @property
     def height(self):
         """Height Getter."""
