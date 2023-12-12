@@ -74,8 +74,10 @@ class Rectangle(Base):
         """
         function to print rectangle size
         """
-        for x in range(self.height):
-            print("#" * self.width)
+        for i in range(self.y):
+            print()
+        for i in range(self.height):
+            print(" " * + "#" * self.width)
 
     def __str__(self):
         """Returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
