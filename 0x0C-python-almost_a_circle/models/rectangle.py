@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # models/rectangle.py
 """This is for the rectangle"""
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -9,9 +9,6 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """initialize the class Rectangle"""
-
-        super().__init__(id)
-        """takes identitity from the base class"""
 
         """
         Args:
@@ -25,6 +22,7 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def height(self):
