@@ -105,48 +105,35 @@ class Rectangle(Base):
                 self.height
                 )
 
-        def update(self, *args, **kwargs):
-            """Update the Rectangle.
-
-        Args:
-            *args (ints): New attribute values.
-                - 1st arg = id attribute
-                - 2nd arg = width attribute
-                - 3rd arg = height attribute
-                - 4th arg = x attribute
-                - 5th arg = y attribute
-            **kwargs (dict): New key/value pairs of attributes.
-        """
-        if args:
-            for k, v in enumerate(args):
-                if k == 0:
-                    self.id = v
-                elif k == 1:
-                    self.width = v
-                elif k == 2:
-                    self.height = v
-                elif k == 3:
-                    self.x = v
+        def update(self, *args):
+            """Update the Rectangle."""
+            for count, arg in enumerate(args):
+                if count == 0:
+                    self.id = arg
+                elif count == 1:
+                    self.width = arg
+                elif count == 2:
+                    self.height = arg
+                elif count == 3:
+                    self.x = arg
+                elif count == 4:
+                    self.y = arg
                 else:
-                    self.y = v
-        else:
-            if "id" in kwargs:
-                self.id = kwargs["id"]
-            if "width" in kwargs:
-                self.width = kwargs["width"]
-            if "height" in kwargs:
-                self.height = kwargs["height"]
-            if "x" in kwargs:
-                self.x = kwargs["x"]
-            if "y" in kwargs:
-                self.y = kwargs["y"]
+                    continue
 
-    def to_dictionary(self):
-        """Return the dictionary representation of a Rectangle."""
-        return {
-                "id": self.id,
-                "width": self.width,
-                "height": self.height,
-                "x": self.x,
-                "y": self.y
-                }
+if __name__ == "__main__":
+
+    r1 = Rectangle(10, 10, 10, 10)
+    print(r1)
+
+    r1.update(height=1)
+    print(r1)
+
+    r1.update(width=1, x=2)
+    print(r1)
+
+    r1.update(y=1, width=2, x=3, id=89)
+    print(r1)
+
+    r1.update(x=1, height=2, y=3, width=4)
+    print(r1)
