@@ -106,7 +106,18 @@ class Rectangle(Base):
                 )
 
     def update(self, *args, **kwargs):
-        """Update the Rectangle."""
+        """Update the Rectangle.
+
+         Args:
+            *args (ints): New attribute values.
+                - 1st arg = id attribute
+                - 2nd arg = width attribute
+                - 3rd arg = height attribute
+                - 4th arg = x attribute
+                - 5th arg = y attribute
+            **kwargs (dict): New key/value pairs of attributes.
+        """
+
         if args:
             for count, arg in enumerate(args):
                 if count == 0:
@@ -117,21 +128,26 @@ class Rectangle(Base):
                     self.height = arg
                 elif count == 3:
                     self.x = arg
-                elif count == 4:
+                else:
                     self.y = arg
-                else:
-                    continue
-        elif len(kwargs) > 0:
-            for key, value in kwargs.items():
-                if key == "id":
-                    self.id = value
-                elif key == "width":
-                    self.width = value
-                elif key == "height":
-                    self.height = value
-                elif key == "x":
-                    self.x = value
-                elif key == "y":
-                    self.y = value
-                else:
-                    break
+        else:
+             if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """Return the dictionary representation of a Rectangle."""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
