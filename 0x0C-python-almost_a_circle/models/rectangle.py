@@ -103,10 +103,10 @@ class Rectangle(Base):
                 self.y,
                 self.width,
                 self.height
-        )
+                )
 
-    def update(self, *args, **kwargs):
-         """Update the Rectangle.
+        def update(self, *args, **kwargs):
+            """Update the Rectangle.
 
         Args:
             *args (ints): New attribute values.
@@ -144,10 +144,9 @@ class Rectangle(Base):
     def to_dictionary(self):
         """Return the dictionary representation of a Rectangle."""
         return {
-            "id": self.id,
-            "width": self.width,
-            "height": self.height,
-            "x": self.x,
-            "y": self.y
-        }
-        
+                "id": self.id,
+                "width": self.width,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y
+                }
