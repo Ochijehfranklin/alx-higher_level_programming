@@ -2,5 +2,3 @@
 
 module.exports = class Rectangle {
 }
-
-
