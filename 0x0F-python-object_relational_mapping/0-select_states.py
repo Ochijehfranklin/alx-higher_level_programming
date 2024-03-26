@@ -1,15 +1,4 @@
 #!/usr/bin/python3
-# Get all states
-
-"""
-List all states in database
-Takes in username, password and database
-"""
-
-import MySQLdb
-from sys import argv
-
-#!/usr/bin/python3
 """
 Return all values in a table
 Parameters: username, password, database
@@ -19,7 +8,6 @@ import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
-
     # connecting to database
     db = MySQLdb.connect(host="localhost",
                          port=3306,
