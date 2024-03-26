@@ -1,19 +1,20 @@
 #!/usr/bin/node
 
+
 const request = require('request');
+const apiUrl = process.argv[2];
 
-const characterId = 18; // Wedge Antilles' character ID
-const apiUrl = 'https://swapi-api.alx-tools.com/api/films/';
+request(apiUrl, { method: 'GET' }, (err, { statusCode, body }) => {
+  if (err) return console.log(err);
+  if (statusCode === 200) {
+    const { results } = JSON.parse(body);
+    const count = results.map(({ characters }) => {
+      const { length } = characters.filter(line => line.includes('18'));
+      return length;
+    }).reduce((a, b) => a + b);
 
-request(apiUrl, { json: true }, (err, res, body) => {
-  if (err) {
-    console.error('Error:', err);
-    return;
+    console.log(count);
+  } else {
+    console.log(`Erorr Code: ${statusCode}`);
   }
-
-  const moviesWithWedge = body.results.filter(movie =>
-    movie.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)
-  );
-
-  console.log(`${moviesWithWedge.length}`);
 });
